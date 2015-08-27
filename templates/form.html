@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>YouTube Downloader</title>
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" media="screen" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<legend style="text-align:center;">YouTube Downloader</legend>
+			<div class="form-group">
+				<label for="">Enter video URL</label>
+				<input type="text" class="form-control" id="url" placeholder="Eg.https://www.youtube.com/watch?v=9uq3w6JJS00">
+			</div>
+		<button id="search_tbn" class="btn btn-primary" style="width:100%;">Download</button>
+		<hr/>
+		<div style="text-align:center;">
+			Made by <a href="#" target="_blank">Daxeel Soni</a> with <a href="http://flask.pocoo.org/" target="_blank">Flask</a>
+		</div>
+	</div>
+	<script>
+		$('#search_tbn').click(function redirect() {
+			var url = $('#url').val();
+			if (url.length>0) {
+				var id = url.slice(-11,-1) + url.slice(-1);
+				window.location = '/download/'+id;
+			} else{
+				alert("Please enter URL");
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{all_title[0]}}</title>
+	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="//code.jquery.com/jquery.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<div class="container">
+		<legend style="text-align:center;">
+			<a href="/"><button type="button" class="btn btn-primary" style="float:left;"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Back</button></a>
+			YouTube Downloader
+		</legend>
+
+		<br>
+
+		<h5>Video name : {{all_title[0]}}</h5>
+		<h5>Video URL : <a href="https://www.youtube.com/watch?v={{id}}">https://www.youtube.com/watch?v={{id}}</a></h5>
+
+		<br>
+
+		<table class="table table-hover" style="text-align:center;">
+			<thead>
+				<tr>
+					<th style="text-align:center;">Video Format</th>
+					<th style="text-align:center;">Video Quality</th>
+					<th style="text-align:center;">Video Download</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for tr in range(all_format|length) %}
+    				<tr>
+    					<td>{{ all_format[tr] }}</td>
+    					<td>{{ all_quality[tr] }}</td>
+    					<td><a href="{{ all_url[tr] }}" class="btn btn-success">Download</a></td>
+    				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+
+	<hr/>
+	<div style="text-align:center;">
+		Made by <a href="#" target="_blank">Daxeel Soni</a> with <a href="http://flask.pocoo.org/" target="_blank">Flask</a>
+	</div>
+
+</body>
+</html>
