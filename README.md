@@ -3,4 +3,4 @@ This is YouTube Downloader developed with Python+Flask using <a href="https://ww
 
 # Demo
 This youtube downloader is live. Try it out here:
-<a href="http://ytdpy.tk/" target="_blank">Live Demo</a>
+<a href="#" target="_blank">Live Demo</a>
